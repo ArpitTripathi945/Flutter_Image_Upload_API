@@ -24,6 +24,8 @@ class _ImageUploadState extends State<ImageUpload> {
           return Padding(
             padding: const EdgeInsets.fromLTRB(15, 35, 15, 35),
             child: Column(children: [
+              //Select an Image
+
               Center(
                 child: SizedBox(
                   height: 50,
@@ -39,6 +41,9 @@ class _ImageUploadState extends State<ImageUpload> {
                 ),
               ),
               const SizedBox(height: 35),
+
+              //Selected Image View
+
               Container(
                 alignment: Alignment.center,
                 height: 210,
@@ -60,6 +65,9 @@ class _ImageUploadState extends State<ImageUpload> {
                 ),
               ),
               SizedBox(height: 40),
+
+              //Upload the Image
+
               Center(
                 child: SizedBox(
                   height: 50,

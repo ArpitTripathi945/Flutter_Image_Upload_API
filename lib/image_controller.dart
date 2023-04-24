@@ -13,10 +13,14 @@ class ImageController extends GetxController {
   String? get imagePath => _imagePath;
   final _picker = ImagePicker();
 
+  //Function to pick image from the gallery
+
   Future<void> pickImage() async {
     _pickedFile = await _picker.getImage(source: ImageSource.gallery);
     update();
   }
+
+  //Function to upload image to server
 
   Future<void> upload() async {
     update();
@@ -33,10 +37,11 @@ class ImageController extends GetxController {
     update();
   }
 
+  //HTTP POST request function
+
   Future<http.StreamedResponse> updateProfile(PickedFile? data) async {
     http.MultipartRequest request = http.MultipartRequest(
         'POST', Uri.parse('https://codelime.in/api/remind-app-token'));
-    // request.headers.addAll(<String,String>{'Authorization': 'Bearer $token'});
     if (GetPlatform.isMobile && data != null) {
       File _file = File(data.path);
       request.files.add(http.MultipartFile(
