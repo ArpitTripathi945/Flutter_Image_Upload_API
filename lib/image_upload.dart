@@ -15,6 +15,7 @@ class _ImageUploadState extends State<ImageUpload> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        drawer: Drawer(),
         appBar: AppBar(
           backgroundColor: Colors.deepPurple,
           title: const Text('Image upload to API'),
